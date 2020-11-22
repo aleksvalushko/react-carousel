@@ -8,7 +8,7 @@ let Carousel = () => {
     let [num, setNum] = useState(1);
 
     useEffect(() => {
-        let timer = setInterval(() => {
+        let carousel = setInterval(() => {
             if (num <= 5) {
                 console.log(num);
                 setNum(num++);
@@ -16,16 +16,16 @@ let Carousel = () => {
                 setNum(num = 1);
             }
         }, 1000);
-        return () => clearInterval(timer);
+        return () => clearInterval(carousel);
     }, []);
 
     return (
         <div className='carousel'>
-            <Slide number='1' newClassName={num === 1 ? 'show' : ''}/>
-            <Slide number='2' newClassName={num === 2 ? 'show' : ''}/>
-            <Slide number='3' newClassName={num === 3 ? 'show' : ''}/>
-            <Slide number='4' newClassName={num === 4 ? 'show' : ''}/>
-            <Slide number='5' newClassName={num === 5 ? 'show' : ''}/>
+            <Slide number='1' showClass='show'/>
+            <Slide number='2' showClass={num === 2 ? 'show' : ''}/>
+            <Slide number='3' showClass={num === 3 ? 'show' : ''}/>
+            <Slide number='4' showClass={num === 4 ? 'show' : ''}/>
+            <Slide number='5' showClass={num === 5 ? 'show' : ''}/>
         </div>
     );
 }

@@ -4,7 +4,7 @@ import './Slide.sass';
 
 let Slide = (props) => {
 
-    let classes = props.newClassName === 'show' ? 'slide show' : 'slide';
+    let classes = props.showClass === 'show' ? 'slide show' : 'slide';
 
     return (
         <div className={classes}>
