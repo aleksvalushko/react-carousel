@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 
 import './Carousel.sass';
-import Slide from "./Slide/Slide";
 
 let Carousel = () => {
 
@@ -21,11 +20,11 @@ let Carousel = () => {
 
     return (
         <div className='carousel'>
-            <Slide number='1' showClass='show'/>
-            <Slide number='2' showClass={num === 2 ? 'show' : ''}/>
-            <Slide number='3' showClass={num === 3 ? 'show' : ''}/>
-            <Slide number='4' showClass={num === 4 ? 'show' : ''}/>
-            <Slide number='5' showClass={num === 5 ? 'show' : ''}/>
+            <div className='slide show'>Slide1</div>
+            <div className={num === 2 ? 'slide show' : 'slide'}>Slide2</div>
+            <div className={num === 3 ? 'slide show' : 'slide'}>Slide3</div>
+            <div className={num === 4 ? 'slide show' : 'slide'}>Slide4</div>
+            <div className={num === 5 ? 'slide show' : 'slide'}>Slide5</div>
         </div>
     );
 }
