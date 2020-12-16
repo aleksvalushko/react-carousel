@@ -7,20 +7,19 @@ let Carousel = () => {
     let [num, setNum] = useState(1);
 
     useEffect(() => {
-        let carousel = setInterval(() => {
-            if (num <= 5) {
-                console.log(num);
-                setNum(num++);
+        let timeout = setInterval(() => {
+            if (num < 5) {
+                setNum(++num);
             } else {
                 setNum(num = 1);
             }
-        }, 1000);
-        return () => clearInterval(carousel);
-    }, []);
+        }, 2000);
+        return () => clearInterval(timeout);
+    }, [num]);
 
     return (
         <div className='carousel'>
-            <div className='slide show'>Slide1</div>
+            <div className={num === 1 ? 'slide show' : 'slide'}>Slide1</div>
             <div className={num === 2 ? 'slide show' : 'slide'}>Slide2</div>
             <div className={num === 3 ? 'slide show' : 'slide'}>Slide3</div>
             <div className={num === 4 ? 'slide show' : 'slide'}>Slide4</div>

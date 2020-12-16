@@ -19,6 +19,13 @@ module.exports = {
             {
                 test: /\.sass$/i,
                 use: ["style-loader", "css-loader", "sass-loader"]
+            },
+            {
+                test: /\.(gif|png|jpg|jpeg|svg)?$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'img/[name].[ext]',
+                },
             }
         ]
     }
