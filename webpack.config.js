@@ -7,6 +7,11 @@ module.exports = {
         path: path.join(__dirname, "/dist"),
         filename: "index_bundle.js"
     },
+    resolve: {
+        alias: {
+            images: path.resolve(__dirname, 'src/img/'),
+        },
+    },
     module: {
         rules: [
             {
